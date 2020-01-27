@@ -37,4 +37,9 @@ cmake_print_variables(SRC_EXE_INTERFACE_LINK_LIBRARIES)
 
 target_compile_definitions(cpp_demos PRIVATE
     BAR_PROPERTY=$<TARGET_PROPERTY:BAR_PROPERTY>
+    BAR_PROPERTY2=$<TARGET_PROPERTY:BAR_PROPERTY2>
+)
+
+target_compile_definitions(cpp_demos PRIVATE
+    $<$<CONFIG:Debug>:SRC_EXE_DEBUG_BUILD>
 )
