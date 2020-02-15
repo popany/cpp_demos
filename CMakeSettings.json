@@ -1,22 +1,15 @@
 ﻿{
-  "environments": [
-    {
-      "BOOST_INCLUDEDIR": "C:\\SDKs\\boost_1_58_0\\",
-      "BOOST_LIBRARYDIR": "C:\\local\\boost_1_72_0\\lib64-msvc-14.2",
-      "BOOST_ROOT": "C:\\local\\boost_1_72_0\\boost"
-    }
-  ],
   "configurations": [
     {
-      "name": "x64-Debug",
-      "generator": "Visual Studio 16 2019 Win64",
-      "configurationType": "Debug",
-      "buildRoot": "${projectDir}\\build-win32\\${name}",
-      "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "--debug-trycompile -T v142",
       "buildCommandArgs": "-v:minimal",
+      "buildRoot": "${projectDir}\\build-win32\\${name}",
+      "cmakeCommandArgs": "--debug-trycompile -T v142",
+      "configurationType": "Debug",
       "ctestCommandArgs": "",
+      "generator": "Visual Studio 16 2019 Win64",
       "inheritEnvironments": [ "msvc_x64" ],
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "name": "x64-Debug",
       "variables": []
     }
   ]
