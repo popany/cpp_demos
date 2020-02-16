@@ -3,7 +3,7 @@
     {
       "buildCommandArgs": "-v:minimal",
       "buildRoot": "${projectDir}\\build-win32\\${name}",
-      "cmakeCommandArgs": "--debug-trycompile -T v142",
+      "cmakeCommandArgs": "--debug-trycompile -T v140",
       "configurationType": "Debug",
       "ctestCommandArgs": "",
       "generator": "Visual Studio 16 2019 Win64",
