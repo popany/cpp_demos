@@ -27,6 +27,7 @@ ExternalProject_Add(
 )
 
 ExternalProject_Get_Property(googletest source_dir binary_dir)
+set(GTEST_HOME "${source_dir}/googletest" CACHE INTERNAL "") # used by mockcpp
 
 if(MSVC)
     Set(OUTPUT_DIR "${binary_dir}/lib/Release")

@@ -9,6 +9,7 @@ TARGET_LINK_LIBRARIES(testbar
     bar
     gtest
     gmock
+    mockcpp
 )
 
 add_test(NAME testbar
