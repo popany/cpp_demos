@@ -20,9 +20,6 @@ ExternalProject_Add(
 
 ExternalProject_Get_Property(mockcpp_external source_dir binary_dir)
 
-cmake_print_variables(source_dir)
-cmake_print_variables(binary_dir)
-
 if(MSVC)
     Set(OUTPUT_DIR "${binary_dir}/src/Release")
 else()
