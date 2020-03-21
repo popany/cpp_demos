@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "libbar/bar.h"
-#include "mockcpp/mokc.h"
+//#include "mockcpp/mokc.h"
+#include "mockcpp/mockcpp.hpp"
 
 class BarTest : public ::testing::Test
 {

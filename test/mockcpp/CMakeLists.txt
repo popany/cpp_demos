@@ -4,10 +4,17 @@ include(ExternalProject)
 
 ExternalProject_Add(
     mockcpp_external
-    URL https://bitbucket.org/godsme/mockcpp/get/06ad37ddc45c.zip
+    # URL https://bitbucket.org/godsme/mockcpp/get/06ad37ddc45c.zip
+    URL ftp://192.168.1.8/mockcpp/06ad37ddc45c.zip
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/mockcpp
 
     CMAKE_ARGS "-DMOCKCPP_XUNIT=gtest" "-DMOCKCPP_XUNIT_HOME=${GTEST_HOME}" "-DPython_ADDITIONAL_VERSIONS=2.7"
+
+    // build as debug for Unix Makefiles
+    CMAKE_BUILD_TYPE "Debug"
+
+    // build as debug for visual studio 
+    BUILD_COMMAND "${CMAKE_COMMAND}" "--build" "${CMAKE_CURRENT_BINARY_DIR}/mockcpp/src/mockcpp_external-build" "--config" "Debug"
 
     # Disable install step
     INSTALL_COMMAND ""
@@ -21,7 +28,7 @@ ExternalProject_Add(
 ExternalProject_Get_Property(mockcpp_external source_dir binary_dir)
 
 if(MSVC)
-    Set(OUTPUT_DIR "${binary_dir}/src/Release")
+    Set(OUTPUT_DIR "${binary_dir}/src/Debug")
 else()
     Set(OUTPUT_DIR "${binary_dir}/src")
 endif()
@@ -29,7 +36,7 @@ endif()
 add_library(mockcpp IMPORTED STATIC GLOBAL)
 add_dependencies(mockcpp mockcpp_external)
 set(MOCKCPP_INCLUDE_DIRECTORY "${source_dir}/include")
-#file(MAKE_DIRECTORY ${MOCKCPP_INCLUDE_DIRECTORY})
+file(MAKE_DIRECTORY ${MOCKCPP_INCLUDE_DIRECTORY})
 target_include_directories(mockcpp
 	INTERFACE
 		${MOCKCPP_INCLUDE_DIRECTORY}

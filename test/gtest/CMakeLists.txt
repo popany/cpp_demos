@@ -6,7 +6,8 @@ include(ExternalProject)
 # Download and install GoogleTest
 ExternalProject_Add(
     googletest
-    URL https://github.com/google/googletest/archive/release-1.10.0.zip
+    # URL https://github.com/google/googletest/archive/release-1.10.0.zip
+    URL ftp://192.168.1.8/googletest/release-1.10.0.zip
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/googletest
 
     CMAKE_ARGS "-Dgtest_force_shared_crt=ON"
