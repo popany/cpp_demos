@@ -12,6 +12,7 @@ project(cpp_demos VERSION 1.0.0 LANGUAGES CXX C)
 
 set (CMAKE_CXX_STANDARD 11)
 
+# make VERBOSE=1
 # set(CMAKE_VERBOSE_MAKEFILE on)
 
 include(CMakePrintHelpers)
@@ -33,6 +34,7 @@ add_subdirectory(libbar)
 if(UNIX)
     add_subdirectory(socket)
 endif()
+add_subdirectory(dll)
 
 get_property(ROOT_DIR_INCLUDE_DIRECTORIES DIRECTORY PROPERTY INCLUDE_DIRECTORIES)
 cmake_print_variables(ROOT_DIR_INCLUDE_DIRECTORIES)

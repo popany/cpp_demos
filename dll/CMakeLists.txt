@@ -1,0 +1,5 @@
+add_subdirectory(foo_api)
+add_subdirectory(use_foo_api)
+if(WIN32)
+add_subdirectory(dynamic_load_win32)
+endif()
