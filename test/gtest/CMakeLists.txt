@@ -12,10 +12,10 @@ ExternalProject_Add(
 
     CMAKE_ARGS "-Dgtest_force_shared_crt=ON"
     
-    // build as release for Unix Makefiles
+    # build as release for Unix Makefiles
     CMAKE_BUILD_TYPE "Release"
 
-    // build as release for visual studio 
+    # build as release for visual studio 
     BUILD_COMMAND "${CMAKE_COMMAND}" "--build" "${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest-build" "--config" "Release"
 
     # Disable install step
