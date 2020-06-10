@@ -11,6 +11,18 @@
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "name": "x64-Debug",
       "variables": []
+    },
+    {
+      "name": "x64-Release",
+      "generator": "Visual Studio 16 2019 Win64",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}\\build-win32\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "-T v140",
+      "buildCommandArgs": "-v:minimal",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": []
     }
   ]
 }

@@ -28,13 +28,14 @@ include_directories(
 )
 
 add_subdirectory(src)
-add_subdirectory(test)
+#add_subdirectory(test)
 add_subdirectory(libfoo)
 add_subdirectory(libbar)
 if(UNIX)
     add_subdirectory(socket)
 endif()
 add_subdirectory(dll)
+add_subdirectory(boost.asio.demo)
 
 get_property(ROOT_DIR_INCLUDE_DIRECTORIES DIRECTORY PROPERTY INCLUDE_DIRECTORIES)
 cmake_print_variables(ROOT_DIR_INCLUDE_DIRECTORIES)
