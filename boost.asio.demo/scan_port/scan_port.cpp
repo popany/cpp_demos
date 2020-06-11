@@ -115,7 +115,7 @@ public:
                         portsScanned.push_back(session->endPoint.port());
                     }
                     if (isDebug) {
-						std::cout << "port: " << session->endPoint.port() << "\n";
+						std::cout << "port: " << session->endPoint.port() << ", errorCode: " << errorCode.value() << ", errorMessage: " << errorCode.message() << "\n";
                     }
                     tcpClient->CloseSession(session);
                 }
